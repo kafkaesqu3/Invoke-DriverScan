@@ -5106,4 +5106,7 @@ _zumbus='Microsoft Zune User-Mode Bus Emulator'
 
 $drivers = driverquery.exe /fo csv | convertFrom-csv
 
-$drivers | Select-Object -ExpandProperty "Module Name" | % {$driver = "_$_"; $list[$driver]}
+$drivers | Select-Object -ExpandProperty "Module Name" | % {
+$driver = "_$_"
+write-host $driver : $list[$driver]
+}
